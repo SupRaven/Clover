@@ -1,0 +1,383 @@
+/* ==========================================
+   ROOT COLORS
+========================================== */
+
+:root{
+    --accent: #b48cff;
+    --accent-hover: #caa8ff;
+    --text: #ffffff;
+    --glass: rgba(255,255,255,0.10);
+    --glass-border: rgba(255,255,255,0.18);
+    --overlay: rgba(18,18,30,.55);
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Manrope',sans-serif;
+    color:var(--text);
+
+    background-image:url("wallpaper/bg1.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* ==========================================
+   DARK OVERLAY
+========================================== */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:var(--overlay);
+    z-index:-1;
+}
+
+/* ==========================================
+   LOADER
+========================================== */
+
+#loader{
+
+    position:fixed;
+    inset:0;
+
+    background:#181523;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    transition:opacity .8s ease;
+}
+
+.loader-content{
+    text-align:center;
+}
+
+.loader-heart{
+    font-size:4rem;
+    color:#c79cff;
+    animation:pulse 2s infinite;
+}
+
+.loader-content h2{
+
+    margin-top:20px;
+    font-weight:500;
+    letter-spacing:2px;
+
+}
+
+.loader-content p{
+
+    margin-top:15px;
+    opacity:.8;
+    line-height:1.8;
+
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* ==========================================
+   MAIN
+========================================== */
+
+main{
+
+    width:min(1000px,90%);
+    margin:auto;
+    padding:100px 0;
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+
+    text-align:center;
+    margin-bottom:80px;
+
+}
+
+.hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:5rem;
+    color:#ffffff;
+    margin-bottom:25px;
+
+    text-shadow:0 0 15px rgba(180,140,255,.4);
+
+}
+
+.hero p{
+
+    max-width:650px;
+    margin:auto;
+
+    line-height:2;
+    font-size:1.1rem;
+
+}
+
+/* ==========================================
+   LETTERS
+========================================== */
+
+.letters{
+
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+
+}
+
+/* ==========================================
+   GLASS CARD
+========================================== */
+
+.letter-card{
+
+    background:var(--glass);
+
+    border:1px solid var(--glass-border);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.15);
+
+    transition:.35s;
+
+}
+
+.letter-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.letter-button{
+
+    width:100%;
+
+    background:none;
+    border:none;
+
+    color:white;
+
+    padding:28px;
+
+    font-size:1.1rem;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.letter-button:hover{
+
+    color:var(--accent-hover);
+
+}
+
+/* ==========================================
+   HIDDEN LETTER
+========================================== */
+
+.letter-content{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .7s ease;
+
+}
+
+.letter-content p{
+    font-family:'Caveat', cursive;
+    font-size:2rem;
+    line-height:2;
+    letter-spacing:.2px;
+    padding:15px 40px 40px;
+}
+
+/* JS adds this */
+
+.letter-card.open .letter-content{
+
+    max-height:800px;
+
+}
+
+/* ==========================================
+   MUSIC BUTTON
+========================================== */
+
+#musicButton{
+
+    position:fixed;
+
+    bottom:30px;
+    right:30px;
+
+    width:60px;
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:1.4rem;
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+    backdrop-filter:blur(15px);
+
+    transition:.3s;
+
+    z-index:100;
+
+}
+
+#musicButton:hover{
+
+    transform:scale(1.08);
+
+    background:rgba(255,255,255,.25);
+
+}
+
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+    margin-top:90px;
+
+    text-align:center;
+
+    opacity:.8;
+
+    padding-bottom:20px;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#b48cff;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#1d1b29;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+    font-size:3.2rem;
+
+}
+
+.hero p{
+
+    font-size:1rem;
+
+}
+
+.letter-button{
+
+    padding:22px;
+
+    font-size:1rem;
+
+}
+
+#musicButton{
+
+    width:52px;
+    height:52px;
+
+    bottom:20px;
+    right:20px;
+
+}
+
+}

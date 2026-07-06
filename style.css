@@ -245,18 +245,27 @@ main{
 }
 
 .letter-content p{
-    font-family:'Caveat', cursive;
-    font-size:2rem;
-    line-height:2;
-    letter-spacing:.2px;
+
     padding:15px 40px 40px;
+
+    font-family:'Special Elite', monospace;
+
+    font-size:1.4rem;
+
+    line-height:2;
+
+    letter-spacing:.8px;
+
+    color:#f8f6ff;
+
 }
+
 
 /* JS adds this */
 
 .letter-card.open .letter-content{
 
-    max-height:800px;
+    max-height:5000px;
 
 }
 
